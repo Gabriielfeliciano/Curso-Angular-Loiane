@@ -12,6 +12,7 @@
             <img [src]="image"> 
         </div>
     </div> -->
+
     <!-- CLASS AND STYLE BINDING -->
     <!-- <div class="row">
         <div class="col">
@@ -47,7 +48,9 @@
             </div>
         </div>
     </div> -->
-    <div class="row">
+
+    <!-- EVENT DATABINDING -->
+    <!-- <div class="row">
         <div class="col">
             <h3>Event Binding</h3>
 
@@ -70,6 +73,23 @@
             [class.highlight]="isMouseOver">
                 Passe o mouse sobre mim
             </span>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col">
+            <h3>Two-way data binding</h3>
+
+            <input type="text" [value]="nome" (input)="nome = campoInput.value" #campoInput>
+
+            <input type="text" [(ngModel)]="nome">
+
+            <p>Foi digitado: {{ nome }}</p>
+
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+            <p>Meu nome é {{ pessoa.nome }} e eu tenho {{ pessoa.idade }} anos</p>
         </div>
     </div>
 </div>
