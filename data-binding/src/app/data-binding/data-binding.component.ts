@@ -18,6 +18,13 @@ export class DataBindingComponent implements OnInit {
   valorSalvo = "";
   isMouseOver = false;
 
+  nome = "abc";
+
+  pessoa = {
+    nome : "nome aqui",
+    idade : 0
+  };
+
   constructor() { }
 
   ngOnInit(): void {
