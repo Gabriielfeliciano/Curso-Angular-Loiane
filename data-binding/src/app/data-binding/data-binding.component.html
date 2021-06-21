@@ -76,7 +76,8 @@
         </div>
     </div> -->
 
-    <div class="row">
+    <!-- TWO-DATA BINDING -->
+    <!-- <div class="row">
         <div class="col">
             <h3>Two-way data binding</h3>
 
@@ -90,6 +91,16 @@
             <input type="text" [(ngModel)]="pessoa.idade">
 
             <p>Meu nome é {{ pessoa.nome }} e eu tenho {{ pessoa.idade }} anos</p>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col">
+            <h3>Input/Output Properties</h3>
+
+            <app-curso [nome]="nomeDoCurso"></app-curso>
+
+            <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
         </div>
     </div>
 </div>
