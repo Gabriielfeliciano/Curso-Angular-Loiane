@@ -1,0 +1,14 @@
+<h5>*ngIf</h5>
+
+<div *ngIf="cursos.length == 0">
+    Lista não tem cursos 
+</div>
+
+<div *ngIf="cursos.length > 0">
+    Lista de cursos aqui
+    <ul>
+        <li *ngFor="let item of cursos">
+            {{item}}
+        </li>
+    </ul>
+</div>
