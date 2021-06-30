@@ -9,9 +9,15 @@ export class DiretivaNgifComponent implements OnInit {
 
   cursos: string[] = ["Angular"];
 
+  mostrarCursos = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mostrarCurso(){
+    this.mostrarCursos = !this.mostrarCursos;
   }
 
 }
