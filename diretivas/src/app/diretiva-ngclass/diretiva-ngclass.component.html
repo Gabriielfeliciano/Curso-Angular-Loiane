@@ -1,1 +1,21 @@
-<p>diretiva-ngclass works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn"
+            [class.btn-primary]="meuFavorito"
+            [class.btn-warning]="!meuFavorito"
+            (click)="onClick()">Class Binding</button>
+        </div>
+
+        <div class="col">
+            <button class="btn"
+            [ngClass]="{
+                'btn-danger' : meuFavorito,
+                'btn-info' : !meuFavorito
+            }"
+            (click)="onClick()">NgClass</button>
+        </div>
+    </div>
+</div>
+    
+
