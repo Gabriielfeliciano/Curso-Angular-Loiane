@@ -30,5 +30,17 @@ export class ExemplosPipesComponent implements OnInit {
     console.log(this.livros);
   }
 
+  obterCursos() {
+
+    if (this.livros.length === 0 || this.filtro === undefined
+    || this.filtro.trim() === '') {
+      return this.livros;
+    }
+
+    return this.livros.filter(
+       v => v.toLocaleLowerCase().includes(this.filtro.toLocaleLowerCase())
+    );
+  }
+
 
 }
