@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
@@ -12,20 +13,27 @@ const routes: Routes = [
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
     canActivate: [AuthGuard],
     canActivateChild: [CursosGuard],
+    canLoad: [AuthGuard]
   },
   {
     path: 'alunos',
     loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
     canActivate: [AuthGuard],
-  },
-  {
-    path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    canLoad: [AuthGuard]
   },
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path:'**',
+    component: PaginaNaoEncontradaComponent
   }
 ];
 
