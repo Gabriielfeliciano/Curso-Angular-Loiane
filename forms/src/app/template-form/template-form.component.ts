@@ -11,7 +11,7 @@ export class TemplateFormComponent implements OnInit {
     nome: null,
     email: null
   }
-
+ 
   onSubmit(form: any){
     console.log(form)
     console.log(this.usuario);
@@ -24,4 +24,13 @@ export class TemplateFormComponent implements OnInit {
 
   }
 
+  verificaValidTouched(campo:any){
+    return !campo.valid && campo.touched
+  }
+
+  aplicaCssErro(campo:any){
+    return {
+      'was-validated' : this.verificaValidTouched(campo)
+    }
+  }
 }
