@@ -22,7 +22,7 @@
     <div class="form-group" ngModelGroup="endereco">
         <div class="row my-3">
             <div class="col-sm-3" [ngClass]="aplicaCssErro(cep)">
-                <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" ngModel required #cep="ngModel">
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" ngModel required #cep="ngModel" (blur)="consultaCEP(cep.value, f)" >
                 <p *ngIf="!cep.valid && cep.touched" class="text-danger">CEP é obrigatório</p>
             </div>
             <div class="col-sm-3" [ngClass]="aplicaCssErro(numero)">
