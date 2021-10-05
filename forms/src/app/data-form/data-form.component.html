@@ -1,9 +1,10 @@
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="form-group" >
         <div class="row my-3">
             <label for="colFormLabel" class="col-sm-1 col-form-label">Nome</label>
             <div class="col-sm">
-                <input type="text" class="form-control" id="nome" formControlName="nome" placeholder="Nome" required >
+                <input type="text" class="form-control" [ngClass]="aplicaCssErro('nome')" id="nome" formControlName="nome" placeholder="Nome">
+                <app-campo-control-erro [mostrarErro]="verificaValidTouched('nome')" msgErro="Nome é obrigatório."></app-campo-control-erro>
             </div>
         </div>
     </div>
@@ -11,12 +12,15 @@
         <div class="row my-3">
             <label for="colFormLabel" class="col-sm-1 col-form-label">Email</label>
             <div class="col-sm">
-                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Nome@email.com" required>
+                <input type="email" class="form-control" [ngClass]="aplicaCssErro('email')" id="email" formControlName="email" placeholder="Nome@email.com">
+                <app-campo-control-erro [mostrarErro]="verificaValidTouched('email')" msgErro="E-mail é obrigatório."></app-campo-control-erro>
+                <app-campo-control-erro [mostrarErro]="verficaEmailInvalido()" msgErro="E-mail é invalido."></app-campo-control-erro>
             </div>
         </div>
     </div>
 
     <button type="submit" class="btn btn-primary mt-2" >Submit</button>
+    <button class="btn mt-2" (click)="resetar()" >Cancel</button>
 
     <app-form-debug [form]="formulario"></app-form-debug>
 </form>
