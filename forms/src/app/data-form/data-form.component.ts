@@ -21,13 +21,21 @@ export class DataFormComponent implements OnInit {
 
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]]
+      email: [null, [Validators.required, Validators.email]],
+
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        numero: [null,Validators.required],
+        complemento: [null],
+        rua: [null,Validators.required],
+        bairro: [null,Validators.required],
+        cidade: [null,Validators.required],
+        estado: [null,Validators.required]
+      })
     });
   }
 
   onSubmit(){
-    console.log(this.formulario);
-
     this.http.post('https://httpbin.org/post', JSON.stringify(  this.formulario.value)).subscribe(dados => {
       console.log(dados);
       // this.resetar()
@@ -40,7 +48,7 @@ export class DataFormComponent implements OnInit {
     this.formulario.reset();
   }
   
-  verificaValidTouched(campo:any){
+  verificaValidTouched(campo:string){
 
     return !this.formulario.controls[campo].valid && this.formulario.controls[campo].touched
      
@@ -53,9 +61,50 @@ export class DataFormComponent implements OnInit {
     }
   }
 
-  aplicaCssErro(campo:any){
+  aplicaCssErro(campo:string){
     return {
       'is-invalid' : this.verificaValidTouched(campo)
     }
   }
+
+  // consultaCEP(cep: string, form:any) {
+  //   // Nova variável "cep" somente com dígitos.
+  //   cep = cep.replace(/\D/g, '');
+  //   this.resetaDadosForm(form)
+  //   // Verifica se campo cep possui valor informado.
+  //   if (cep !== '') {
+  //     // Expressão regular para validar o CEP.
+  //     const validacep = /^[0-9]{8}$/;
+
+  //     // Valida o formato do CEP.
+  //     if (validacep.test(cep)) {
+  //       this.http.get(`//viacep.com.br/ws/${cep}/json`).subscribe(dados => this.populaDadosForm(dados,form));
+  //     }
+  //   }
+  // }
+
+  // populaDadosForm(dados:any, formulario:any){
+  //   formulario.form.patchValue({
+  //     endereco: {
+  //       rua: dados.logradouro,
+  //       // cep: dados.cep,
+  //       //complemento: dados.complemento,
+  //       bairro: dados.bairro,
+  //       cidade: dados.localidade,
+  //       estado: dados.uf
+  //     }
+  //   });
+  // }
+
+  // resetaDadosForm(formulario:any) {
+  //   formulario.form.patchValue({
+  //     endereco: {
+  //       rua: null,
+  //       //complemento: null,
+  //       bairro: null,
+  //       cidade: null,
+  //       estado: null
+  //     }
+  //   });
+  // }
 }
