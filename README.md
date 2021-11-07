@@ -1,5 +1,9 @@
-﻿# Curso-Angular-Loiane
-Repositório criado para armazenar códigos do curso de Angular da Loiane.
+<h1 align="center">Curso Angular Loaine</h1>
+
+<h4 align="center"> 
+	🚧  Curso Angular Loaine 🚀 Em andamento...  🚧
+</h4>
+
 
 - [x]  Introdução 
 - [x]  Data binding 
