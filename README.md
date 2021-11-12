@@ -1,7 +1,7 @@
 <h1 align="center">Curso Angular Loaine</h1>
 
 <h4 align="center"> 
-	🚧  Curso Angular Loaine 🚀 Em andamento...  🚧
+	🛑  Curso Angular Loaine 🚀 Parado...  🛑
 </h4>
 
 
