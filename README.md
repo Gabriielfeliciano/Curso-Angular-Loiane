@@ -13,7 +13,7 @@
 - [x]  Pipes 
 - [x]  Rotas 
 - [x]  Formulários (Template Driven) 
-- [ ]  Formulários Reativos (data-driven)
+- [x]  Formulários Reativos (data-driven)
 - [ ]  Http 
 - [ ]  Depuração/ Debug 
 - [ ]  Build e Deploy 
