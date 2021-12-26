@@ -1,4 +1,4 @@
-<h1 align="center">Curso Angular Loaine</h1>
+<h1 align="center">Curso Angular Loiane</h1>
 
 <h4 align="center"> 
 	🛑  Curso Angular Loaine 🚀 Pausado...  🛑
