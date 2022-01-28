@@ -14,6 +14,6 @@
 - [x]  Rotas 
 - [x]  Formulários (Template Driven) 
 - [x]  Formulários Reativos (data-driven)
-- [ ]  Http 
-- [ ]  Depuração/ Debug 
-- [ ]  Build e Deploy 
+- [x]  Http 
+- [x]  Depuração/ Debug 
+- [x]  Build e Deploy 
