@@ -17,3 +17,4 @@
 - [x]  Http 
 - [x]  Depuração/ Debug 
 - [x]  Build e Deploy 
+...
